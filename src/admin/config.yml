@@ -12,6 +12,26 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
+  - label: "Álbuns"
+    name: "album"
+    folder: "src/albuns"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Capa", name: "capa", widget: "image" }
+      - { label: "Nota", name: "nota", widget: "number", value_type: "int" }
+      - { label: "Lançamento", name: "lancamento", widget: "datetime", default: "", date_format: "DD/MM/YYYY", time_format: "HH:mm", format: "LLL", picker_utc: false }
+      - { label: "Data de Publicação", name: "datapublicacao", widget: "datetime" }
+      - { label: "Destaques", name: "destaques", widget: "markdown" }
+      - { label: "Resenha", name: "resenha", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        create: true
+        options: ["Pop", "Rock", "Country"]
   - label: "Blog"
     name: "blog"
     folder: "src/posts"
